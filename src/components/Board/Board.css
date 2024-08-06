@@ -1,0 +1,6 @@
+.board {
+  background-color: #f4f5f7;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
