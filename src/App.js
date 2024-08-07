@@ -5,8 +5,6 @@ import { useSearchParams } from 'react-router-dom';
 import Board from './components/Board';
 import Filters from './components/Filters';
 
-import './App.css';
-
 function App() {
   const [groupOption, setGroupOption] = useState('status');
   const [orderOption, setOrderOption] = useState('priority');

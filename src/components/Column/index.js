@@ -36,26 +36,22 @@ const imgMapper = {
 
 function Column({ groupOption, columnInfo, tickets }) {
   return (
-    <div className="column">
-      <div style={{
-        display: 'flex',
-        padding: '0px 20px',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+    <div>
+      <div
+        className="column-header"
+      >
+        <div className="column-header-section">
           <img
-            style={{ width: '20px', height: '20px', margin: '3px' }}
+            className="avatars"
             src={groupOption === 'user' ? user : imgMapper[columnInfo.title]}
             alt="Down"
-            className="down"
           />
-          <h3 style={{ margin: '3px', textTransform: 'capitalize' }}>{groupOption === 'user' ? columnInfo.name : columnInfo.title}</h3>
-          <h3 style={{ marginLeft: '10px'}}>{tickets?.length}</h3>
+          <h3 className="column-title-text">{groupOption === 'user' ? columnInfo.name : columnInfo.title}</h3>
+          <h3 className="ticket-count">{tickets?.length}</h3>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <img style={{ width: '20px', height: '20px', margin: '3px' }} src={add} alt="Add" className="add" />
-          <img style={{ width: '20px', height: '20px', margin: '3px' }} src={threeDotMenu} alt="ThreeDotMenu" className="threeDotMenu" />
+        <div className="column-header-section">
+          <img className="avatars" src={add} alt="Add" />
+          <img className="avatars" src={threeDotMenu} alt="ThreeDotMenu" />
         </div>
       </div>
       {tickets.map((ticket) => (
@@ -64,31 +60,5 @@ function Column({ groupOption, columnInfo, tickets }) {
     </div>
   );
 }
-
-// function Column({ groupOption, columnInfo, tickets }) {
-//   return (
-//     <div>
-//       <div className="column-header">
-//         <div className="column-header-section">
-//           <img
-//             style={{ width: '20px', height: '20px', margin: '3px' }}
-//             src={groupOption === 'user' ? user : imgMapper[columnInfo.title]}
-//             alt="Down"
-//             className="down"
-//           />
-//           <h3>{groupOption === 'user' ? columnInfo.name : columnInfo.title}</h3>
-//           <h3 className="ticket-count">{tickets?.length}</h3>
-//         </div>
-//         <div className="column-header-section">
-//           <img className="avatars" src={add} alt="Add" />
-//           <img className="avatars" src={threeDotMenu} alt="ThreeDotMenu" />
-//         </div>
-//       </div>
-//       {tickets.map((ticket) => (
-//         <Ticket key={ticket.id} ticket={ticket} />
-//       ))}
-//     </div>
-//   );
-// }
 
 export default Column;

@@ -50,31 +50,10 @@ const Filters = ({
   const renderFilters = () => (
     createPortal(
       <div
-        style={{
-          position: 'absolute',
-          top: '50px',
-          left: '50px',
-          backgroundColor: 'white',
-          border: '1px solid #ccc',
-          padding: '10px',
-          zIndex: '1000',
-          display: 'flex',
-          flexDirection: 'column',
-          width: '230px',
-        }}
         className="filters-dropdown"
         onClick={(e) => e.stopPropagation()}
       >
         <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            margin: '4px 3px',
-            fontSize: '13px',
-            color: '#6b6f76',
-          }}
           className="filters-group"
         >
           <div>Grouping</div>
@@ -87,15 +66,6 @@ const Filters = ({
           </div>
         </div>
         <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            margin: '4px 3px',
-            fontSize: '13px',
-            color: '#6b6f76',
-          }}
           className="filters-group"
         >
           <div>Ordering</div>
@@ -115,13 +85,13 @@ const Filters = ({
     <div className="filters">
       <button className="dropbtn" onClick={handleDisplayClick}>
         <img
-          style={{ width: '20px', height: '20px', margin: '3px' }}
+          className="avatar"
           src={display}
           alt="Display"
         />
         Display
         <img
-          style={{ width: '20px', height: '20px', margin: '3px' }}
+          className="avatar"
           src={down}
           alt="Down"
         />
