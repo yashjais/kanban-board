@@ -1,4 +1,5 @@
 import React from 'react';
+import userAvatar from '../../assets/user.png';
 import './Ticket.css';
 
 function Ticket({ ticket }) {
@@ -6,14 +7,17 @@ function Ticket({ ticket }) {
     <div className="ticket">
       <div className="ticket-header">
         <span className="ticket-id">{ticket.id}</span>
-        {/* <img src="https://via.placeholder.com/32" alt="User Avatar" className="user-avatar" /> */}
+        <img src={userAvatar} alt="User Avatar" className="user-avatar" />
       </div>
       <div className="ticket-title">
         {ticket.title}
       </div>
       <div className="ticket-footer">
-        <div className="ticket-icon">❗</div>
-        <div className="ticket-tag">Feature Request</div>
+        {
+          ticket.tag.map((tg, index) => (
+            <div key={index} className="ticket-tag">{tg}</div>
+          ))
+        }
       </div>
     </div>
   );
